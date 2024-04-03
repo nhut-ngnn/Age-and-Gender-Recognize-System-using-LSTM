@@ -1,5 +1,6 @@
 
 import keras_metrics as km
+from keras import metrics
 
 from keras import Sequential
 from keras.layers import LSTM, Dense
@@ -15,7 +16,7 @@ def lstm_gender_model(num_labels):
     model.add(LSTM(100, dropout=0.2))
     model.add(Dense(num_labels, activation='softmax'))
     model.compile(loss='categorical_crossentropy', optimizer='adam',
-                  metrics=['accuracy', km.precision()])
+                  metrics=['accuracy', metrics.F1Score(threshold=0.5)])
     return model
 
 

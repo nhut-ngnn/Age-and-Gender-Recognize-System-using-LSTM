@@ -1,0 +1,10 @@
+tf.Tensor([0.57142854 0.5384615 ], shape=(2,), dtype=float32) 0.7592592835426331
+tf.Tensor([0.70995665 0.6666666 ], shape=(2,), dtype=float32) 0.7962962985038757
+tf.Tensor([0.7725321  0.73366827], shape=(2,), dtype=float32) 0.8333333134651184
+tf.Tensor([0.8193832 0.8      ], shape=(2,), dtype=float32) 0.8888888955116272
+tf.Tensor([0.8471615 0.8275862], shape=(2,), dtype=float32) 0.8888888955116272
+tf.Tensor([0.8468468  0.83809525], shape=(2,), dtype=float32) 0.9074074029922485
+tf.Tensor([0.85972846 0.8530805 ], shape=(2,), dtype=float32) 0.9074074029922485
+tf.Tensor([0.890909  0.8867924], shape=(2,), dtype=float32) 0.9259259104728699
+tf.Tensor([0.8789237 0.8708133], shape=(2,), dtype=float32) 0.9444444179534912
+tf.Tensor([0.9189189  0.91428566], shape=(2,), dtype=float32) 0.9444444179534912

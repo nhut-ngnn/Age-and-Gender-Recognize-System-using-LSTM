@@ -181,10 +181,10 @@ if __name__ == '__main__':
     # the process of transforming audio before it gets converted to mfcc
 
     # Dataset plot
-    # dataset_plot("C:/Users/Admin/Documents/AgeDetection/voice-bases-age-gender-classification/gender_data_clean/gender_out")
-    dataset_plot("C:/Users/Admin/Documents/AgeDetection/voice-bases-age-gender-classification/age_data_clean/age_out")
+    dataset_plot("C:/Users/Admin/Documents/AgeDetection/voice-bases-age-gender-classification/gender_data_clean/gender_out")
+    # dataset_plot("C:/Users/Admin/Documents/AgeDetection/voice-bases-age-gender-classification/age_data_clean/age_out")
     
-    # Audio features plot
+    # # Audio features plot
     # data_path = "C:/Users/Admin/Documents/AgeDetection/voice-bases-age-gender-classification/audio/"
 
     # file = os.listdir(data_path)[0]

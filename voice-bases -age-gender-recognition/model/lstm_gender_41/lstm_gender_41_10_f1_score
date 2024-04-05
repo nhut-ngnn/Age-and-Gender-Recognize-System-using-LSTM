@@ -1,0 +1,40 @@
+tf.Tensor([0.57142854 0.5384615 ], shape=(2,), dtype=float32) 0.7592592835426331
+tf.Tensor([0.70995665 0.6666666 ], shape=(2,), dtype=float32) 0.7962962985038757
+tf.Tensor([0.7725321  0.73366827], shape=(2,), dtype=float32) 0.8333333134651184
+tf.Tensor([0.8193832 0.8      ], shape=(2,), dtype=float32) 0.8888888955116272
+tf.Tensor([0.8471615 0.8275862], shape=(2,), dtype=float32) 0.8888888955116272
+tf.Tensor([0.8468468  0.83809525], shape=(2,), dtype=float32) 0.9074074029922485
+tf.Tensor([0.85972846 0.8530805 ], shape=(2,), dtype=float32) 0.9074074029922485
+tf.Tensor([0.890909  0.8867924], shape=(2,), dtype=float32) 0.9259259104728699
+tf.Tensor([0.8789237 0.8708133], shape=(2,), dtype=float32) 0.9444444179534912
+tf.Tensor([0.9189189  0.91428566], shape=(2,), dtype=float32) 0.9444444179534912
+tf.Tensor([0.55230117 0.44559577], shape=(2,), dtype=float32) 0.8148148059844971
+tf.Tensor([0.7373271 0.7348836], shape=(2,), dtype=float32) 0.8703703880310059
+tf.Tensor([0.7570093 0.7614678], shape=(2,), dtype=float32) 0.9444444179534912
+tf.Tensor([0.7946428 0.7788461], shape=(2,), dtype=float32) 0.9444444179534912
+tf.Tensor([0.83783776 0.8285714 ], shape=(2,), dtype=float32) 0.9444444179534912
+tf.Tensor([0.85972846 0.8530805 ], shape=(2,), dtype=float32) 0.9444444179534912
+tf.Tensor([0.8949771  0.89201874], shape=(2,), dtype=float32) 0.9259259104728699
+tf.Tensor([0.8986783  0.88780487], shape=(2,), dtype=float32) 0.9259259104728699
+tf.Tensor([0.9035087  0.89215684], shape=(2,), dtype=float32) 0.9444444179534912
+tf.Tensor([0.89655167 0.87999994], shape=(2,), dtype=float32) 0.9629629850387573
+tf.Tensor([0.6371681 0.6019417], shape=(2,), dtype=float32) 0.7777777910232544
+tf.Tensor([0.70967734 0.70697665], shape=(2,), dtype=float32) 0.8333333134651184
+tf.Tensor([0.81196576 0.77777773], shape=(2,), dtype=float32) 0.8888888955116272
+tf.Tensor([0.8384279  0.81773394], shape=(2,), dtype=float32) 0.9074074029922485
+tf.Tensor([0.83700436 0.81951207], shape=(2,), dtype=float32) 0.9259259104728699
+tf.Tensor([0.8733624 0.8571428], shape=(2,), dtype=float32) 0.9259259104728699
+tf.Tensor([0.87557596 0.87441856], shape=(2,), dtype=float32) 0.9444444179534912
+tf.Tensor([0.88209605 0.866995  ], shape=(2,), dtype=float32) 0.9444444179534912
+tf.Tensor([0.9162995 0.907317 ], shape=(2,), dtype=float32) 0.9629629850387573
+tf.Tensor([0.8898678  0.87804866], shape=(2,), dtype=float32) 0.9444444179534912
+tf.Tensor([0.5929203 0.553398 ], shape=(2,), dtype=float32) 0.7962962985038757
+tf.Tensor([0.7149321  0.70142174], shape=(2,), dtype=float32) 0.8518518805503845
+tf.Tensor([0.7767857 0.7596153], shape=(2,), dtype=float32) 0.8888888955116272
+tf.Tensor([0.8471615 0.8275862], shape=(2,), dtype=float32) 0.9074074029922485
+tf.Tensor([0.8198198 0.8095237], shape=(2,), dtype=float32) 0.9259259104728699
+tf.Tensor([0.8558558  0.84761894], shape=(2,), dtype=float32) 0.9074074029922485
+tf.Tensor([0.84018254 0.8356807 ], shape=(2,), dtype=float32) 0.9259259104728699
+tf.Tensor([0.8828828  0.87619036], shape=(2,), dtype=float32) 0.9259259104728699
+tf.Tensor([0.8986783  0.88780487], shape=(2,), dtype=float32) 0.9259259104728699
+tf.Tensor([0.9082969  0.89655167], shape=(2,), dtype=float32) 0.9259259104728699

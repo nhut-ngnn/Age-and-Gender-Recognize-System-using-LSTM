@@ -89,7 +89,8 @@ def plot_figures(pitches, magnitudes):
 
     plt.tight_layout()
     manager = plt.get_current_fig_manager()
-    manager.window.showMaximized()
+    # manager.window.showMaximized()
+    manager.window.state('zoomed')
     plt.show()
 
 
@@ -181,23 +182,23 @@ if __name__ == '__main__':
     # the process of transforming audio before it gets converted to mfcc
 
     # Dataset plot
-    dataset_plot("C:/Users/Admin/Documents/AgeDetection/voice-bases-age-gender-classification/gender_data_clean/gender_out")
+    # dataset_plot("C:/Users/Admin/Documents/AgeDetection/voice-bases-age-gender-classification/gender_data_clean/gender_out")
     # dataset_plot("C:/Users/Admin/Documents/AgeDetection/voice-bases-age-gender-classification/age_data_clean/age_out")
     
-    # # Audio features plot
-    # data_path = "C:/Users/Admin/Documents/AgeDetection/voice-bases-age-gender-classification/audio/"
+    # Audio features plot
+    data_path = "C:/Users/Admin/Documents/AgeDetection/voice-bases-age-gender-classification/audio/"
 
-    # file = os.listdir(data_path)[0]
-    # file = Path(data_path + file)
-    # duration = librosa.core.get_duration(filename=str(file))
+    file = os.listdir(data_path)[0]
+    file = Path(data_path + file)
+    duration = librosa.core.get_duration(filename=str(file))
 
-    # audio_transform_plot(file)
-    # mfcc_features_plot(file)
-    # audio_data, pitch_values, magnitude_values = get_pitch_magnitude(file, SAMPLE_RATE)
-    # plot_figures(pitch_values, magnitude_values)
-    # other_feature_plot(file)
+    audio_transform_plot(file)
+    mfcc_features_plot(file)
+    audio_data, pitch_values, magnitude_values = get_pitch_magnitude(file, SAMPLE_RATE)
+    plot_figures(pitch_values, magnitude_values)
+    other_feature_plot(file)
 
     # Model Performance plot
-    # model_performance_plot("model/lstm_gender_41", 10, ['acc', 'loss', 'precision'])
+    model_performance_plot("model/lstm_gender_41", 10, ['acc', 'loss', 'precision'])
     # model_performance_plot("model/lstm_age_41", 30, ['acc', 'loss', 'precision'])
     # model_performance_plot("model/lstm_lang_41", 20, ['acc', 'loss', 'precision'])

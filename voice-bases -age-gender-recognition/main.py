@@ -17,11 +17,11 @@ gender_labels = {
 
 age_labels = {
     # 0: "fifties",
-    1: "fourties",
-    2: "sixties",
-    3: "teens",
-    4: "thirties",
-    5: "twenties"
+    0: "fourties",
+    1: "sixties",
+    2: "teens",
+    3: "thirties",
+    4: "twenties"
 }
 
 
@@ -74,15 +74,15 @@ def main_program():
         
         gender_print = "{} ==> GENDER(lstm): {} gender_prob: {}".format(data_file,
                         get_gender(gender_predict).upper(), gender_predict)
-        # age_print = "{} ==> AGE(lstm): {} age_prob: {}".format(data_file,
-        #                  get_age(age_predict).upper(), age_predict)
+        age_print = "{} ==> AGE(lstm): {} age_prob: {}".format(data_file,
+                         get_age(age_predict).upper(), age_predict)
     
-        # print('=' * max(len(gender_print))), len(age_print)))
+        print('=' * max(len(gender_print), len(age_print)))
         print()
         print(gender_print)
-        # print(age_print)
+        print(age_print)
         print()
-        # print('=' * max(len(gender_print))), len(age_print)))
+        print('=' * max(len(gender_print), len(age_print)))
 
 
 if __name__ == '__main__':

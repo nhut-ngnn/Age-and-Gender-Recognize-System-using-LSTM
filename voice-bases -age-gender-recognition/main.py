@@ -6,7 +6,6 @@ import numpy as np
 from extract_features import get_audio_features
 from gender_model import lstm_gender_model
 from age_model import lstm_age_model
-from language_model import lstm_lang_model
 from utils import norm_multiple
 from file_io import get_data_files
 
@@ -40,7 +39,7 @@ def get_age(out_data):
 
 def main_program():
 
-    gender_weights, gender_means, gender_stddev = get_data_files(models_path, "gender", 10)
+    gender_weights, gender_means, gender_stddev = get_data_files(models_path, "gender", 30)
     age_weights, age_means, age_stddev = get_data_files(models_path, "age", 30)
     np.set_printoptions(precision=3)
 

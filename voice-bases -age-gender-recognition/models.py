@@ -9,6 +9,9 @@ BATCH_SIZE = 128
 
 
 def train_deepnn(model_file, inputs, outputs, model, num_epochs):
+    if len(outputs)>len(inputs):
+        outputs = outputs[:len(inputs)]
+        
     x_train, x_valid, y_train, y_valid = train_test_split(inputs, outputs, test_size=0.2, random_state=36)
 
     means, std_dev = get_mean_stddev(x_train)
@@ -30,9 +33,10 @@ def train_deepnn(model_file, inputs, outputs, model, num_epochs):
         history_valid = model.evaluate(x_valid, y_valid, verbose=0, batch_size=BATCH_SIZE)
 
         key_list = list(history_train.history.keys())
+        acc_train = history_train.history["accuracy"][0]
         score_train = history_train.history["loss"][0]
         print(history_train.history.keys())
-        acc_train = history_train.history["accuracy"][0]
+       
 
         print()
         print("Epoch {}/{}".format(epoch + 1, num_epochs))

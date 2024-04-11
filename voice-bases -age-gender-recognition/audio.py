@@ -5,7 +5,7 @@ FORMAT = pyaudio.paInt16
 CHANNELS = 2
 RATE = 48000
 CHUNK = 1024
-RECORD_SECONDS = 3
+RECORD_SECONDS = 5
 WAVE_OUTPUT_FILENAME = "C:/Users/admin/Documents/AgeDetection/voice-bases-age-gender-classification/audio/ami_en.wav"
 
 audio = pyaudio.PyAudio()

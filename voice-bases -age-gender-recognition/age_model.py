@@ -12,7 +12,7 @@ NUM_FEATURES = 41  # 39
 def lstm_age_model(num_labels):
     model = Sequential()
     model.add(LSTM(1024, input_shape=(35, NUM_FEATURES), return_sequences=True, dropout=0.3))
-    model.add(LSTM(512, dropout=0.3))
+    model.add(LSTM(1024, dropout=0.3))
     model.add(Dense(128 * 2, activation='relu'))
     model.add(Dropout(0.3))
     model.add(BatchNormalization())
@@ -21,7 +21,7 @@ def lstm_age_model(num_labels):
     model.add(BatchNormalization())
     model.add(Dense(num_labels, activation='softmax'))
     model.compile(loss='categorical_crossentropy', optimizer='adam',
-                   metrics=['accuracy', metrics.F1Score(threshold=0.5)])
+                   metrics=['accuracy'])#, metrics.F1Score(threshold=0.5)])
     return model
 
 

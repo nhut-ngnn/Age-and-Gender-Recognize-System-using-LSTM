@@ -69,7 +69,7 @@ def get_data_files(filepath, prefix, num_epochs, num_features=41,
     num_features = str(num_features)
 
     model_name = '_'.join([model_type, prefix, num_features])
-    model_file = model_name + '_' + num_epochs + ".model"
+    model_file = model_name + '_' + num_epochs + ".keras"
     model_path = filepath + model_name + "/"
     means_file = '_'.join(["means", prefix, num_features]) + ".npy"
     stddevs_file = '_'.join(["stddev", prefix, num_features]) + ".npy"
@@ -93,7 +93,7 @@ def add_history(filepath, history_train, history_valid, metrics):
         with open(filepath + "_" + metrics[i], "a+") as file:
             file.write(str(history_train[metrics[i]][0]))
             file.write(" ")
-            file.write(str(history_valid[i]))
+            file.write(str(history_valid[1-i]))
             file.write('\n')
 
 

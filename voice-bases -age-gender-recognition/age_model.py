@@ -11,12 +11,18 @@ NUM_FEATURES = 41  # 39
 
 def lstm_age_model(num_labels):
     model = Sequential()
-    model.add(LSTM(1024, input_shape=(35, NUM_FEATURES), return_sequences=True, dropout=0.3))
-    model.add(LSTM(1024, dropout=0.3))
+    model.add(LSTM(128*2, input_shape=(35, NUM_FEATURES), return_sequences=True, dropout=0.3))
+    model.add(LSTM(128*2, dropout=0.3))
     model.add(Dense(128 * 2, activation='relu'))
     model.add(Dropout(0.3))
     model.add(BatchNormalization())
     model.add(Dense(128, activation='relu'))
+    model.add(Dropout(0.3))
+    model.add(BatchNormalization())
+    model.add(Dense(128, activation='relu'))
+    model.add(Dropout(0.3))
+    model.add(BatchNormalization())
+    model.add(Dense(64, activation='relu'))
     model.add(Dropout(0.3))
     model.add(BatchNormalization())
     model.add(Dense(num_labels, activation='softmax'))
@@ -31,7 +37,7 @@ def main_class_age_train():
 
     train_multi_epoch(dataset, model + str(NUM_FEATURES),
                       lstm_age_model, train_deepnn,
-                      num_epoch_start=30,
+                      num_epoch_start=60,
                       num_features=NUM_FEATURES,
                       file_prefix="age")
 

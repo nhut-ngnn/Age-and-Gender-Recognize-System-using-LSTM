@@ -6,7 +6,7 @@ from extract_features import get_features
 from utils import get_count, min_label_count
 
 folder_path = "C:/Users/admin/Documents/AgeDetection/voice-bases-age-gender-classification/DataSet/"
-english_dataset_path = "zh-CN/"
+english_dataset_path = "ja/"
 # french_dataset_path = "vi/"
 # german_dataset_path = "german_dataset/"
 audio_path = "clips/"
@@ -150,7 +150,7 @@ def create_gender_dataset(out_data_path, min_samples=0):
     print(len(outputs))
     print(get_count(outputs))
 
-    get_features(out_data_path + "gender_", inputs, ['delta', 'delta2', 'pitch'])
+    get_features(out_data_path + "gender_", inputs, ['delta', 'delta2', 'pitch','sdc'])
     write_to_file_labels(out_data_path + "gender_out", outputs)
     in_files = ["gender_input" + str(i + 1) for i in range(6)]
     concat_files(out_data_path, in_files, "gender_in")
@@ -160,10 +160,11 @@ def clean_age_dataset(inputs, outputs) -> (np.array, np.array):
     cleaned_in = []
     cleaned_out = []
     for i in range(len(outputs)):
-        if outputs[i] == "eighties" \
+        if outputs[i] == "fifties" \
+                or outputs[i] == "sixties":
+            outputs[i] = "fifties_sixties"
+        elif outputs[i] == "eighties" \
                 or outputs[i] == "nineties"\
-                or outputs[i] == "fifties" \
-                or outputs[i] == "sixties"\
                 or outputs[i] == "seventies":
             continue   
         cleaned_in.append(inputs[i])
@@ -171,7 +172,7 @@ def clean_age_dataset(inputs, outputs) -> (np.array, np.array):
     return np.array(cleaned_in), np.array(cleaned_out)
 
 
-def create_age_dataset(out_data_path, min_samples=500):
+def create_age_dataset(out_data_path, min_samples=0):
     if out_data_path[-1] != '/':
         out_data_path = out_data_path + '/'
     if min_samples <= 0:
@@ -180,7 +181,7 @@ def create_age_dataset(out_data_path, min_samples=500):
     en_input, en_output = get_data("age", english_dataset_path, file_list[5], out_age_file)
 
     inputs, outputs = clean_age_dataset(en_input, en_output)
-    # inputs, outputs = create_equal_dataset(inputs, outputs, min_samples)
+    inputs, outputs = create_equal_dataset(inputs, outputs, min_samples)
 
     print(len(inputs))
     print(len(outputs))

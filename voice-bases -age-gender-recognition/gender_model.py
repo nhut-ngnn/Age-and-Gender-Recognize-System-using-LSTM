@@ -13,12 +13,15 @@ NUM_FEATURES = 41  # 20, 41, 39
 def lstm_gender_model(num_labels):
     model = Sequential() 
     model.add(LSTM(256, input_shape=(35, NUM_FEATURES), dropout=0.3, return_sequences=True))
-    model.add(LSTM(256, dropout=0.2))
+    model.add(LSTM(256, dropout=0.3))
     model.add(Dense(128 * 2, activation='relu'))
-    model.add(Dropout(0.2))
+    model.add(Dropout(0.3))
+    model.add(BatchNormalization())
+    model.add(Dense(128, activation='relu'))
+    model.add(Dropout(0.3))
     model.add(BatchNormalization())
     model.add(Dense(64, activation='relu'))
-    model.add(Dropout(0.2))
+    model.add(Dropout(0.3))
     model.add(BatchNormalization())
     model.add(Dense(num_labels, activation='softmax'))
     model.compile(loss='categorical_crossentropy', optimizer='adam',

@@ -12,7 +12,7 @@ def train_deepnn(model_file, inputs, outputs, model, num_epochs):
     if len(outputs)>len(inputs):
         outputs = outputs[:len(inputs)]
         
-    x_train, x_valid, y_train, y_valid = train_test_split(inputs, outputs, test_size=0.2, random_state=36)
+    x_train, x_valid, y_train, y_valid = train_test_split(inputs, outputs, test_size=0.05, random_state=36)
 
     means, std_dev = get_mean_stddev(x_train)
 

@@ -129,7 +129,7 @@ def clean_gender_dataset(inputs, outputs) -> (np.array, np.array):
     return np.array(cleaned_in), np.array(cleaned_out)
 
 
-def create_gender_dataset(out_data_path, min_samples=0):
+def create_gender_dataset(out_data_path, min_samples=100):
     """
     create the files holding the data for the gender prediction model
     :param out_data_path: where to save the files
@@ -141,7 +141,7 @@ def create_gender_dataset(out_data_path, min_samples=0):
         min_samples = 2 ** 20
 
     en_input, en_output = get_data(["gender", "age"], english_dataset_path,
-                                   file_list[5], out_gender_file)
+                                   file_list[4], out_gender_file)
 
     inputs, outputs = clean_gender_dataset(en_input, en_output)
     inputs, outputs = create_equal_dataset(inputs, outputs, min_samples)
@@ -150,7 +150,7 @@ def create_gender_dataset(out_data_path, min_samples=0):
     print(len(outputs))
     print(get_count(outputs))
 
-    get_features(out_data_path + "gender_", inputs, ['delta', 'delta2', 'pitch','sdc'])
+    get_features(out_data_path + "gender_", inputs, ['delta', 'delta2', 'pitch'])
     write_to_file_labels(out_data_path + "gender_out", outputs)
     in_files = ["gender_input" + str(i + 1) for i in range(6)]
     concat_files(out_data_path, in_files, "gender_in")
@@ -172,13 +172,13 @@ def clean_age_dataset(inputs, outputs) -> (np.array, np.array):
     return np.array(cleaned_in), np.array(cleaned_out)
 
 
-def create_age_dataset(out_data_path, min_samples=0):
+def create_age_dataset(out_data_path, min_samples=100):
     if out_data_path[-1] != '/':
         out_data_path = out_data_path + '/'
     if min_samples <= 0:
         min_samples = 2 ** 20
 
-    en_input, en_output = get_data("age", english_dataset_path, file_list[5], out_age_file)
+    en_input, en_output = get_data("age", english_dataset_path, file_list[4], out_age_file)
 
     inputs, outputs = clean_age_dataset(en_input, en_output)
     inputs, outputs = create_equal_dataset(inputs, outputs, min_samples)
@@ -203,5 +203,5 @@ if __name__ == "__main__":
     test_age_folder = "C:/Users/admin/Documents/AgeDetection/voice-bases-age-gender-classification/age_data_clean_2"
     age_data_small_folder = "C:/Users/admin/Documents/AgeDetection/voice-bases-age-gender-classification/age_data_clean_small"
    
-    # create_gender_dataset(gender_data_folder)
-    create_age_dataset(age_data_folder)
+    create_gender_dataset(test_gender_folder)
+    # create_age_dataset(test_age_folder)

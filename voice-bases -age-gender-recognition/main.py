@@ -15,12 +15,12 @@ gender_labels = {
 }
 
 age_labels = {
-    # 0: "fifties",
-    0: "fourties",
-    1: "sixties",
+    0: "fifties_sixties",
+    1: "fourties",
     2: "teens",
     3: "thirties",
     4: "twenties"
+    
 }
 
 
@@ -40,7 +40,7 @@ def get_age(out_data):
 def main_program():
 
     gender_weights, gender_means, gender_stddev = get_data_files(models_path, "gender", 30)
-    age_weights, age_means, age_stddev = get_data_files(models_path, "age", 30)
+    age_weights, age_means, age_stddev = get_data_files(models_path, "age", 100)
     np.set_printoptions(precision=3)
 
     num_gender_labels = len(gender_labels)
@@ -65,7 +65,7 @@ def main_program():
         data = np.array([data.T])
 
         data = norm_multiple(data, mean_paths, stddev_paths)
-
+    
         gender_predict = gender_model.predict(data[0])
         print(gender_predict)
         age_predict = age_model.predict(data[1])

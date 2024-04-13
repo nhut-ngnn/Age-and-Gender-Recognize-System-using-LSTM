@@ -7,8 +7,6 @@ from utils import get_count, min_label_count
 
 folder_path = "C:/Users/admin/Documents/AgeDetection/voice-bases-age-gender-classification/DataSet/"
 english_dataset_path = "ja/"
-# french_dataset_path = "vi/"
-# german_dataset_path = "german_dataset/"
 audio_path = "clips/"
 
 train_type = {"gender", "age", "language"}
@@ -129,7 +127,7 @@ def clean_gender_dataset(inputs, outputs) -> (np.array, np.array):
     return np.array(cleaned_in), np.array(cleaned_out)
 
 
-def create_gender_dataset(out_data_path, min_samples=100):
+def create_gender_dataset(out_data_path, min_samples=1000):
     """
     create the files holding the data for the gender prediction model
     :param out_data_path: where to save the files
@@ -172,7 +170,7 @@ def clean_age_dataset(inputs, outputs) -> (np.array, np.array):
     return np.array(cleaned_in), np.array(cleaned_out)
 
 
-def create_age_dataset(out_data_path, min_samples=100):
+def create_age_dataset(out_data_path, min_samples=0):
     if out_data_path[-1] != '/':
         out_data_path = out_data_path + '/'
     if min_samples <= 0:

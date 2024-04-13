@@ -1,13 +1,11 @@
-
-import keras_metrics as km
-from keras import metrics
+import tensorflow as tf
 
 from keras import Sequential
 from keras.layers import LSTM, Dense, Dropout, BatchNormalization
 
 from models import train_multi_epoch, train_deepnn
 
-NUM_FEATURES = 41  # 20, 41, 39
+NUM_FEATURES = 41 
 
 
 def lstm_gender_model(num_labels):

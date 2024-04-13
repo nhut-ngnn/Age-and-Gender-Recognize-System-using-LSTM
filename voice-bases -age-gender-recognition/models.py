@@ -12,7 +12,7 @@ def train_deepnn(model_file, inputs, outputs, model, num_epochs):
     if len(outputs)>len(inputs):
         outputs = outputs[:len(inputs)]
         
-    x_train, x_valid, y_train, y_valid = train_test_split(inputs, outputs, test_size=0.05, random_state=36)
+    x_train, x_valid, y_train, y_valid = train_test_split(inputs, outputs, test_size=0.1, random_state=36)
 
     means, std_dev = get_mean_stddev(x_train)
 
@@ -27,7 +27,7 @@ def train_deepnn(model_file, inputs, outputs, model, num_epochs):
 
     y_train = labels_to_categorical(y_train)
     y_valid = labels_to_categorical(y_valid)
-
+   
     for epoch in range(num_epochs):
         history_train = model.fit(x_train, y_train, batch_size=BATCH_SIZE, epochs=1, verbose=0)
         history_valid = model.evaluate(x_valid, y_valid, verbose=0, batch_size=BATCH_SIZE)
